@@ -1,0 +1,14 @@
+# jupyter
+jupyterlab-vim
+
+# scientific
+numpy
+scipy
+
+# data frame libs
+pandas
+polars
+
+# plotting
+matplotlib
+seaborn
