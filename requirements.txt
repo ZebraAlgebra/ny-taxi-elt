@@ -4,9 +4,11 @@ jupyterlab-vim
 # scientific
 numpy
 scipy
+scipy-stubs
 
 # data frame libs
 pandas
+pandas-stubs
 polars
 
 # plotting
