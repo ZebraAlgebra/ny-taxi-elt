@@ -14,3 +14,6 @@ polars
 # plotting
 matplotlib
 seaborn
+
+# functional programming
+toolz
