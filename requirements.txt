@@ -17,3 +17,5 @@ seaborn
 
 # functional programming
 toolz
+
+ipython==8.22.0
