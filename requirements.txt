@@ -5,6 +5,7 @@ jupyterlab-vim
 numpy
 scipy
 scipy-stubs
+cvxpy
 
 # data frame libs
 pandas
