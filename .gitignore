@@ -1,3 +1,4 @@
+# NOTE: Python: EL part
 *.bundle.*
 lib/
 node_modules/
@@ -138,3 +139,13 @@ ui-tests/.pnp.*
 
 # generated html
 notebook/templates/*.html
+
+# NOTE: EL parts
+EL/assets/data
+
+# NOTE: DBT: T part
+T/dbt_modules
+T/target/
+T/dbt_packages/
+T/logs/
+
