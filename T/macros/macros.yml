@@ -1,0 +1,9 @@
+version: 2
+
+macros:
+  - name: transform_yellow_tripdata_1
+    description: transform_yellow_tripdata_1
+  - name: transform_yellow_tripdata_2
+    description: transform_yellow_tripdata_2
+  - name: transform_yellow_tripdata_3
+    description: transform_yellow_tripdata_3
