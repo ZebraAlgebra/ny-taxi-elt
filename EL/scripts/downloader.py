@@ -1,21 +1,14 @@
 import datetime
 import os
+import sys
 from pathlib import Path
-from typing import TypedDict
+
+sys.path.append(str(Path(__file__).parent.resolve()))
 
 import requests
 from dateutil.relativedelta import relativedelta
 
-
-class OtherDataSpecDict(TypedDict):
-    url: str
-    filename: str
-
-
-class TripRecordRangeDict(TypedDict):
-    prefix: str
-    start_dt: datetime.datetime
-    end_dt: datetime.datetime
+from .schemas import OtherDataSpecDict, TripRecordRangeDict
 
 
 class Downloader:
@@ -73,28 +66,30 @@ class Downloader:
 
 if __name__ == "__main__":
     downloader = Downloader()
-    trrds: list[TripRecordRangeDict] = [
-        # {
-        #     "prefix": "yellow",
-        #     "start_dt": datetime.datetime(2009, 1, 1),
-        #     "end_dt": datetime.datetime(2025, 1, 15),
-        # },
-        {
-            "prefix": "green",
-            "start_dt": datetime.datetime(2013, 8, 1),
-            "end_dt": datetime.datetime(2013, 12, 1),
-        },
-        # {
-        #     "prefix": "fhv",
-        #     "start_dt": datetime.datetime(2015, 1, 1),
-        #     "end_dt": datetime.datetime(2025, 1, 15),
-        # },
-        # {
-        #     "prefix": "fhvhv",
-        #     "start_dt": datetime.datetime(2019, 3, 1),
-        #     "end_dt": datetime.datetime(2025, 1, 15),
-        # },
-    ]
+    downloader.download_trip_records(
+        [
+            {
+                "prefix": "yellow",
+                "start_dt": datetime.datetime(2025, 2, 1),
+                "end_dt": datetime.datetime(2025, 4, 15),
+            },
+            {
+                "prefix": "green",
+                "start_dt": datetime.datetime(2025, 2, 1),
+                "end_dt": datetime.datetime(2025, 4, 15),
+            },
+            {
+                "prefix": "fhv",
+                "start_dt": datetime.datetime(2025, 2, 1),
+                "end_dt": datetime.datetime(2025, 4, 15),
+            },
+            {
+                "prefix": "fhvhv",
+                "start_dt": datetime.datetime(2025, 2, 1),
+                "end_dt": datetime.datetime(2025, 4, 15),
+            },
+        ]
+    )
     # downloader.download_other_data_multiple(
     #     [
     #         {
