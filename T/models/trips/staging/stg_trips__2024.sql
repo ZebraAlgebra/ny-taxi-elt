@@ -13,7 +13,7 @@
   (2024, 12)
 ] -%}
 {%- for year, month in ym_list -%}
-{{- transform_yellow_tripdata_2(year, month) -}}
+{{- load_transform_2(year, month) -}}
   {%- if not loop.last -%}
 UNION ALL
   {%- endif %}

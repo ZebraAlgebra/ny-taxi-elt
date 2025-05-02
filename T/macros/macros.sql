@@ -1,4 +1,4 @@
-{% macro transform_yellow_tripdata_1(year, month) %}
+{% macro load_transform_1(year, month) %}
     {%- set currency_type = "numeric(7, 2)" %}
 
 select
@@ -30,7 +30,7 @@ from
 
 {% endmacro %}
 
-{% macro transform_yellow_tripdata_2(year, month) %}
+{% macro load_transform_2(year, month) %}
     {%- set currency_type = "numeric(7, 2)" %}
 
 select
@@ -62,7 +62,7 @@ from
 
 {% endmacro %}
 
-{% macro transform_yellow_tripdata_3(year, month) %}
+{% macro load_transform_3(year, month) %}
     {%- set currency_type = "numeric(7, 2)" %}
 
 select
