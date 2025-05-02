@@ -1,0 +1,12 @@
+version: 2
+
+seeds:
+  - name: value_lookups
+    description: "{{ doc('value_lookups') }}"
+    config:
+      quote_columns: false
+      column_types:
+        column_name: text
+        column_value: smallint
+        value_description: text
+      delimiter: ","
