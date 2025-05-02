@@ -3,3 +3,10 @@ version: 2
 models:
   - name: stg_trips__2018
     description: "{{ doc('stg_trips__2018') }}"
+    columns:
+      - name: pickup_datetime
+        tests:
+          - not_null
+      - name: dropoff_datetime
+        tests:
+          - not_null

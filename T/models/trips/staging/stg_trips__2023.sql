@@ -1,29 +1,24 @@
-{%- set ym_list_1 = [
-  (2023, 1),
+{%- set ymo_list = [
+  (2023, 1, {"cbd_congestion_fee_usd": "NULL"}),
+  (2023, 2, {"cbd_congestion_fee_usd": "NULL", "airport_fee_usd": '"Airport_fee"'}),
+  (2023, 3, {"cbd_congestion_fee_usd": "NULL", "airport_fee_usd": '"Airport_fee"'}),
+  (2023, 4, {"cbd_congestion_fee_usd": "NULL", "airport_fee_usd": '"Airport_fee"'}),
+  (2023, 5, {"cbd_congestion_fee_usd": "NULL", "airport_fee_usd": '"Airport_fee"'}),
+  (2023, 6, {"cbd_congestion_fee_usd": "NULL", "airport_fee_usd": '"Airport_fee"'}),
+  (2023, 7, {"cbd_congestion_fee_usd": "NULL", "airport_fee_usd": '"Airport_fee"'}),
+  (2023, 8, {"cbd_congestion_fee_usd": "NULL", "airport_fee_usd": '"Airport_fee"'}),
+  (2023, 9, {"cbd_congestion_fee_usd": "NULL", "airport_fee_usd": '"Airport_fee"'}),
+  (2023, 10, {"cbd_congestion_fee_usd": "NULL", "airport_fee_usd": '"Airport_fee"'}),
+  (2023, 11, {"cbd_congestion_fee_usd": "NULL", "airport_fee_usd": '"Airport_fee"'}),
+  (2023, 12, {"cbd_congestion_fee_usd": "NULL", "airport_fee_usd": '"Airport_fee"'}),
 ] -%}
-{%- set ym_list_2 = [
-  (2023, 2),
-  (2023, 3),
-  (2023, 4),
-  (2023, 5),
-  (2023, 6),
-  (2023, 7),
-  (2023, 8),
-  (2023, 9),
-  (2023, 10),
-  (2023, 11),
-  (2023, 12)
-] -%}
-{%- for year, month in ym_list_1 -%}
-{{- load_transform_1(year, month) -}}
-  {%- if not loop.last -%}
+
+{%- for y, m, o in ymo_list -%}
+select * from (
+{{- combined_cleaner(y, m, overides=o) -}}
+)
+  {% if not loop.last %}
 UNION ALL
-  {%- endif %}
+  {% endif %}
 {%- endfor -%}
-UNION ALL
-{%- for year, month in ym_list_2 -%}
-{{- load_transform_2(year, month) -}}
-  {%- if not loop.last -%}
-UNION ALL
-  {%- endif %}
-{%- endfor -%}
+

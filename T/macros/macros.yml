@@ -1,9 +1,1 @@
 version: 2
-
-macros:
-  - name: load_transform_1
-    description: load_transform_1
-  - name: load_transform_2
-    description: load_transform_2
-  - name: load_transform_3
-    description: load_transform_3
