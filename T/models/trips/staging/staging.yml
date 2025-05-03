@@ -21,3 +21,65 @@ models:
     description: "{{ doc('stg_trips__all') }}"
     docs:
       node_color: red
+    columns:
+      - name: passenger_count
+        description: "{{ doc('col_passenger_count') }}"
+      - name: pickup_datetime
+        description: "{{ doc('col_pickup_datetime') }}"
+      - name: dropoff_datetime
+        description: "{{ doc('col_dropoff_datetime') }}"
+      - name: pickup_location_id
+        description: "{{ doc('col_pickup_location_id') }}"
+        tests:
+          - not_null
+          - test_in_range:
+              lower_bound: 1
+              upper_bound: 265
+      - name: dropoff_location_id
+        description: "{{ doc('col_dropoff_location_id') }}"
+        tests:
+          - not_null
+          - test_in_range:
+              lower_bound: 1
+              upper_bound: 265
+      - name: trip_distance
+        description: "{{ doc('col_trip_distance') }}"
+      - name: vendor_id
+        description: "{{ doc('col_vendor_id') }}"
+        tests:
+          - not_null
+          - accepted_values:
+              values: [1, 2, 4, 5, 6, 7]
+      - name: rate_code_id
+        description: "{{ doc('col_rate_code_id') }}"
+      - name: payment_type_id
+        description: "{{ doc('col_payment_type_id') }}"
+        tests:
+          - not_null
+          - accepted_values:
+              values: [0, 1, 2, 3, 4, 5, 6]
+      - name: store_forward_flag
+        description: "{{ doc('col_store_forward_flag') }}"
+        tests:
+          - accepted_values:
+              values: [0, 1]
+      - name: fare_amount_usd
+        description: "{{ doc('col_fare_amount_usd') }}"
+      - name: extra_charges_usd
+        description: "{{ doc('col_extra_charges_usd') }}"
+      - name: mta_tax_usd
+        description: "{{ doc('col_mta_tax_usd') }}"
+      - name: tip_amount_usd
+        description: "{{ doc('col_tip_amount_usd') }}"
+      - name: tolls_amount_usd
+        description: "{{ doc('col_tolls_amount_usd') }}"
+      - name: total_amount_usd
+        description: "{{ doc('col_total_amount_usd') }}"
+      - name: improvement_surcharge_usd
+        description: "{{ doc('col_improvement_surcharge_usd') }}"
+      - name: congestion_surcharge_usd
+        description: "{{ doc('col_congestion_surcharge_usd') }}"
+      - name: airport_fee_usd
+        description: "{{ doc('col_airport_fee_usd') }}"
+      - name: cbd_congestion_fee_usd
+        description: "{{ doc('col_cbd_congestion_fee_usd') }}"

@@ -3,7 +3,6 @@ version: 2
 seeds:
   - name: value_lookups
     description: "{{ doc('value_lookups') }}"
-
     columns:
       - name: column_name
         description: Name of column where we want to look-up values
@@ -17,4 +16,24 @@ seeds:
         column_name: text
         column_value: smallint
         value_description: text
+      delimiter: ","
+
+  - name: taxi_zone_lookups
+    description: "{{ doc('taxi_zone_lookups') }}"
+    columns:
+      - name: location_id
+        description: Location id as in
+      - name: borough
+        description: Borough of `location_id`
+      - name: zone
+        description: Zone of `location_id`
+      - name: service_zone
+        description: Service zone of `location_id`
+    config:
+      quote_columns: false
+      column_types:
+        location_id: smallint
+        borough: text
+        zone: text
+        service_zone: text
       delimiter: ","

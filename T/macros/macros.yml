@@ -74,3 +74,15 @@ macros:
       - name: overides
         type: dict[str, str]
         description: Dictionary specifying rules for overides of default config
+  - name: test_test_in_range
+    description: Generic test for looking at whether a column lies within a range.
+    arguments:
+      - name: model
+        description: The model to be tested
+      - name: column_name
+        type: str
+        description: The column of model to be tested
+      - name: lower_bound
+        description: Lower bound for testing if column has value >= `lower_bound`
+      - name: upper_bound
+        description: Upper bound for testing if column has value <= `upper_bound`
