@@ -3,6 +3,14 @@ version: 2
 seeds:
   - name: value_lookups
     description: "{{ doc('value_lookups') }}"
+
+    columns:
+      - name: column_name
+        description: Name of column where we want to look-up values
+      - name: column_value
+        description: Accepted values of column given `column_name`, these are `smallint`
+      - name: value_description
+        description: Description of value corresponding to given `column_value`
     config:
       quote_columns: false
       column_types:

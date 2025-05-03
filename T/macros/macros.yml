@@ -1,1 +1,76 @@
 version: 2
+
+macros:
+  - name: fmt_new_ym
+    description: "{{ doc('fmt_new_ym') }}"
+    arguments:
+      - name: y
+        type: int
+        description: Integer representing year
+      - name: m
+        type: int
+        description: Integer between 1~12 representing month
+  - name: fmt_datetime_from_ym
+    description: "{{ doc('fmt_datetime_from_ym') }}"
+    arguments:
+      - name: y
+        type: int
+        description: Integer representing year
+      - name: m
+        type: int
+        description: Integer between 1~12 representing month
+  - name: fmt_source
+    description: "{{ doc('fmt_source') }}"
+    arguments:
+      - name: y
+        type: int
+        description: Integer representing year
+      - name: m
+        type: int
+        description: Integer between 1~12 representing month
+  - name: fmt_store_forward_flag
+    description: "{{ doc('fmt_store_forward_flag') }}"
+  - name: fmt_rate_code_id
+    description: "{{ doc('fmt_rate_code_id') }}"
+  - name: col_rename
+    description: "{{ doc('col_rename') }}"
+    arguments:
+      - name: y
+        type: int
+        description: Integer representing year
+      - name: m
+        type: int
+        description: Integer between 1~12 representing month
+      - name: overides
+        type: dict[str, str]
+        description: Dictionary specifying rules for overides of default config
+  - name: row_filter
+    description: "{{ doc('row_filter') }}"
+    arguments:
+      - name: tname
+        type: str
+        description: Name of table to do column dtype recast
+      - name: y
+        type: int
+        description: Integer representing year
+      - name: m
+        type: int
+        description: Integer between 1~12 representing month
+  - name: col_recast
+    description: "{{ doc('col_recast') }}"
+    arguments:
+      - name: tname
+        type: str
+        description: Name of table to do column dtype recast
+  - name: combined_cleaner
+    description: "{{ doc('combined_cleaner') }}"
+    arguments:
+      - name: y
+        type: int
+        description: Integer representing year
+      - name: m
+        type: int
+        description: Integer between 1~12 representing month
+      - name: overides
+        type: dict[str, str]
+        description: Dictionary specifying rules for overides of default config

@@ -8,9 +8,9 @@
     {{ return ("'" ~ y ~ "-" ~ m ~ "-01 00:00:00'::timestamptz") }}
 {% endmacro %}
 
-{% macro fmt_source(year, month) %}
+{% macro fmt_source(y, m) %}
     {# /* format parts of source string */ #}
-    {{ return('yellow_' ~ year ~ '_' ~ "%02d"|format(month)) }}
+    {{ return('yellow_' ~ y ~ '_' ~ "%02d"|format(m)) }}
 {% endmacro %}
 
 {% macro fmt_store_forward_flag() %}

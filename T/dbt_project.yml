@@ -35,3 +35,8 @@ models:
     trips:
       staging:
         +tags: staging
+
+seeds:
+  +tags: "seeds"
+  +docs:
+    node_color: "orange"

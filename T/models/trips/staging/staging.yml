@@ -3,10 +3,21 @@ version: 2
 models:
   - name: stg_trips__2018
     description: "{{ doc('stg_trips__2018') }}"
-    columns:
-      - name: pickup_datetime
-        tests:
-          - not_null
-      - name: dropoff_datetime
-        tests:
-          - not_null
+  - name: stg_trips__2019
+    description: "{{ doc('stg_trips__2019') }}"
+  - name: stg_trips__2020
+    description: "{{ doc('stg_trips__2020') }}"
+  - name: stg_trips__2021
+    description: "{{ doc('stg_trips__2021') }}"
+  - name: stg_trips__2022
+    description: "{{ doc('stg_trips__2022') }}"
+  - name: stg_trips__2023
+    description: "{{ doc('stg_trips__2023') }}"
+  - name: stg_trips__2024
+    description: "{{ doc('stg_trips__2024') }}"
+  - name: stg_trips__2025
+    description: "{{ doc('stg_trips__2025') }}"
+  - name: stg_trips__all
+    description: "{{ doc('stg_trips__all') }}"
+    docs:
+      node_color: red

@@ -1,4 +1,4 @@
-{% macro col_rename(year, month, overides={}) %}
+{% macro col_rename(y, m, overides={}) %}
     {# /* renames columns, tweaks by additional columns */ #}
 {%- set base_config = {
     "passenger_count": "passenger_count",
@@ -29,15 +29,15 @@
     {%- endfor %}
 
     from
-        {{ source("sources", fmt_source(year, month)) }}
+        {{ source("sources", fmt_source(y, m)) }}
 {% endmacro %}
 
-{% macro row_filter(tname, year, month) %}
+{% macro row_filter(tname, y, m) %}
     {# /* renames columns, tweaks by additional columns */ #}
-{%- set (new_y, new_m) = fmt_new_ym(year, month) %}
+{%- set (new_y, new_m) = fmt_new_ym(y, m) %}
 {%- set filters = [
     "pickup_datetime::timestamptz <= dropoff_datetime::timestamptz", 
-    "pickup_datetime::timestamptz >= " ~ fmt_datetime_from_ym(year, month), 
+    "pickup_datetime::timestamptz >= " ~ fmt_datetime_from_ym(y, m), 
     "pickup_datetime::timestamptz < " ~ fmt_datetime_from_ym(new_y, new_m), 
     "coalesce(trip_distance::double precision, 0) >= 0",
     "coalesce(fare_amount_usd::double precision, 0) <= 10000",
@@ -101,13 +101,13 @@
         {{ tname }}
 {% endmacro %}
 
-{% macro combined_cleaner(year, month, overides={}) %}
+{% macro combined_cleaner(y, m, overides={}) %}
 with t_renamed as (
-{{ col_rename(year, month, overides) }}
+{{ col_rename(y, m, overides) }}
 ),
 
 t_filtered as (
-{{ row_filter("t_renamed", year, month) }}
+{{ row_filter("t_renamed", y, m) }}
 ),
 
 t_recasted as (
