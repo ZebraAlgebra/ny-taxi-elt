@@ -1,31 +1,19 @@
 version: 2
 
 models:
-  - name: stg_trips__2018
-    description: "{{ doc('stg_trips__2018') }}"
-  - name: stg_trips__2019
-    description: "{{ doc('stg_trips__2019') }}"
-  - name: stg_trips__2020
-    description: "{{ doc('stg_trips__2020') }}"
-  - name: stg_trips__2021
-    description: "{{ doc('stg_trips__2021') }}"
-  - name: stg_trips__2022
-    description: "{{ doc('stg_trips__2022') }}"
-  - name: stg_trips__2023
-    description: "{{ doc('stg_trips__2023') }}"
-  - name: stg_trips__2024
-    description: "{{ doc('stg_trips__2024') }}"
-  - name: stg_trips__2025
-    description: "{{ doc('stg_trips__2025') }}"
-  - name: stg_trips__all
-    description: "{{ doc('stg_trips__all') }}"
+  - name: int_trips__all
+    description: "{{ doc('int_trips__all') }}"
     columns:
       - name: passenger_count
         description: "{{ doc('col_passenger_count') }}"
-      - name: pickup_datetime
-        description: "{{ doc('col_pickup_datetime') }}"
-      - name: dropoff_datetime
-        description: "{{ doc('col_dropoff_datetime') }}"
+      - name: pickup_hour
+        description: "{{ doc('col_pickup_hour') }}"
+        tests:
+          - not_null
+      - name: trip_duration
+        description: "{{ doc('col_trip_duration') }}"
+        tests:
+          - not_null
       - name: pickup_location_id
         description: "{{ doc('col_pickup_location_id') }}"
         tests:
@@ -82,6 +70,8 @@ models:
         description: "{{ doc('col_tip_amount_usd') }}"
         tests:
           - not_null
+      - name: tip_amount_usd_percentage
+        description: "{{ doc('col_tip_amount_usd_percentage') }}"
       - name: tolls_amount_usd
         description: "{{ doc('col_tolls_amount_usd') }}"
         tests:
@@ -100,3 +90,18 @@ models:
         description: "{{ doc('col_airport_fee_usd') }}"
       - name: cbd_congestion_fee_usd
         description: "{{ doc('col_cbd_congestion_fee_usd') }}"
+  - name: int_lookups__pairwise_zones
+    description: "{{ doc('int_lookups__pairwise_zones') }}"
+    columns:
+      - name: pickup_location_id
+        tests:
+          - not_null
+          - test_in_range:
+              lower_bound: 1
+              upper_bound: 265
+      - name: dropoff_location_id
+        tests:
+          - not_null
+          - test_in_range:
+              lower_bound: 1
+              upper_bound: 265

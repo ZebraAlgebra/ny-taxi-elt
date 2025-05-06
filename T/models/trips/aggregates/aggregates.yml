@@ -1,0 +1,764 @@
+version: 2
+
+models:
+  - name: agg_hourly_trips_stats
+    description: "{{ doc('agg_hourly_trips_stats') }}"
+    columns:
+      - name: trip_count
+        description: "{{ doc('col_agg__trip_count') }}"
+      - name: trip_duration_sum
+        description: "{{ doc('col_agg__trip_duration_sum') }}"
+      - name: trip_duration_p05
+        description: "{{ doc('col_agg__trip_duration_p05') }}"
+      - name: trip_duration_p10
+        description: "{{ doc('col_agg__trip_duration_p10') }}"
+      - name: trip_duration_p25
+        description: "{{ doc('col_agg__trip_duration_p25') }}"
+      - name: trip_duration_p50
+        description: "{{ doc('col_agg__trip_duration_p50') }}"
+      - name: trip_duration_p75
+        description: "{{ doc('col_agg__trip_duration_p75') }}"
+      - name: trip_duration_p90
+        description: "{{ doc('col_agg__trip_duration_p90') }}"
+      - name: trip_duration_p95
+        description: "{{ doc('col_agg__trip_duration_p95') }}"
+      - name: trip_distance_sum
+        description: "{{ doc('col_agg__trip_distance_sum') }}"
+      - name: trip_distance_p05
+        description: "{{ doc('col_agg__trip_distance_p05') }}"
+      - name: trip_distance_p10
+        description: "{{ doc('col_agg__trip_distance_p10') }}"
+      - name: trip_distance_p25
+        description: "{{ doc('col_agg__trip_distance_p25') }}"
+      - name: trip_distance_p50
+        description: "{{ doc('col_agg__trip_distance_p50') }}"
+      - name: trip_distance_p75
+        description: "{{ doc('col_agg__trip_distance_p75') }}"
+      - name: trip_distance_p90
+        description: "{{ doc('col_agg__trip_distance_p90') }}"
+      - name: trip_distance_p95
+        description: "{{ doc('col_agg__trip_distance_p95') }}"
+      - name: total_amount_usd_sum
+        description: "{{ doc('col_agg__total_amount_usd_sum') }}"
+      - name: total_amount_usd_p05
+        description: "{{ doc('col_agg__total_amount_usd_p05') }}"
+      - name: total_amount_usd_p10
+        description: "{{ doc('col_agg__total_amount_usd_p10') }}"
+      - name: total_amount_usd_p25
+        description: "{{ doc('col_agg__total_amount_usd_p25') }}"
+      - name: total_amount_usd_p50
+        description: "{{ doc('col_agg__total_amount_usd_p50') }}"
+      - name: total_amount_usd_p75
+        description: "{{ doc('col_agg__total_amount_usd_p75') }}"
+      - name: total_amount_usd_p90
+        description: "{{ doc('col_agg__total_amount_usd_p90') }}"
+      - name: total_amount_usd_p95
+        description: "{{ doc('col_agg__total_amount_usd_p95') }}"
+      - name: fare_amount_usd_sum
+        description: "{{ doc('col_agg__fare_amount_usd_sum') }}"
+      - name: fare_amount_usd_p05
+        description: "{{ doc('col_agg__fare_amount_usd_p05') }}"
+      - name: fare_amount_usd_p10
+        description: "{{ doc('col_agg__fare_amount_usd_p10') }}"
+      - name: fare_amount_usd_p25
+        description: "{{ doc('col_agg__fare_amount_usd_p25') }}"
+      - name: fare_amount_usd_p50
+        description: "{{ doc('col_agg__fare_amount_usd_p50') }}"
+      - name: fare_amount_usd_p75
+        description: "{{ doc('col_agg__fare_amount_usd_p75') }}"
+      - name: fare_amount_usd_p90
+        description: "{{ doc('col_agg__fare_amount_usd_p90') }}"
+      - name: fare_amount_usd_p95
+        description: "{{ doc('col_agg__fare_amount_usd_p95') }}"
+      - name: tip_amount_usd_sum
+        description: "{{ doc('col_agg__tip_amount_usd_sum') }}"
+      - name: tip_amount_usd_percentage_p05
+        description: "{{ doc('col_agg__tip_amount_usd_percentage_p05') }}"
+      - name: tip_amount_usd_percentage_p10
+        description: "{{ doc('col_agg__tip_amount_usd_percentage_p10') }}"
+      - name: tip_amount_usd_percentage_p25
+        description: "{{ doc('col_agg__tip_amount_usd_percentage_p25') }}"
+      - name: tip_amount_usd_percentage_p50
+        description: "{{ doc('col_agg__tip_amount_usd_percentage_p50') }}"
+      - name: tip_amount_usd_percentage_p75
+        description: "{{ doc('col_agg__tip_amount_usd_percentage_p75') }}"
+      - name: tip_amount_usd_percentage_p90
+        description: "{{ doc('col_agg__tip_amount_usd_percentage_p90') }}"
+      - name: tip_amount_usd_percentage_p95
+        description: "{{ doc('col_agg__tip_amount_usd_percentage_p95') }}"
+      - name: tolls_amount_usd_sum
+        description: "{{ doc('col_agg__tolls_amount_usd_sum') }}"
+      - name: improvement_surcharge_usd_sum
+        description: "{{ doc('col_agg__improvement_surcharge_usd_sum') }}"
+      - name: congestion_surcharge_usd_sum
+        description: "{{ doc('col_agg__congestion_surcharge_usd_sum') }}"
+      - name: airport_fee_usd_sum
+        description: "{{ doc('col_agg__airport_fee_usd_sum') }}"
+      - name: cbd_congestion_fee_usd_sum
+        description: "{{ doc('col_agg__cbd_congestion_fee_usd_sum') }}"
+      - name: vendor_id_value_1_count
+        description: "{{ doc('col_agg__vendor_id_value_1_count') }}"
+      - name: vendor_id_value_2_count
+        description: "{{ doc('col_agg__vendor_id_value_2_count') }}"
+      - name: vendor_id_value_4_count
+        description: "{{ doc('col_agg__vendor_id_value_4_count') }}"
+      - name: vendor_id_value_5_count
+        description: "{{ doc('col_agg__vendor_id_value_5_count') }}"
+      - name: vendor_id_value_6_count
+        description: "{{ doc('col_agg__vendor_id_value_6_count') }}"
+      - name: vendor_id_value_7_count
+        description: "{{ doc('col_agg__vendor_id_value_7_count') }}"
+      - name: rate_code_id_value_1_count
+        description: "{{ doc('col_agg__rate_code_id_value_1_count') }}"
+      - name: rate_code_id_value_2_count
+        description: "{{ doc('col_agg__rate_code_id_value_2_count') }}"
+      - name: rate_code_id_value_3_count
+        description: "{{ doc('col_agg__rate_code_id_value_3_count') }}"
+      - name: rate_code_id_value_4_count
+        description: "{{ doc('col_agg__rate_code_id_value_4_count') }}"
+      - name: rate_code_id_value_5_count
+        description: "{{ doc('col_agg__rate_code_id_value_5_count') }}"
+      - name: rate_code_id_value_6_count
+        description: "{{ doc('col_agg__rate_code_id_value_6_count') }}"
+      - name: rate_code_id_value_99_count
+        description: "{{ doc('col_agg__rate_code_id_value_99_count') }}"
+      - name: store_forward_flag_value_0_count
+        description: "{{ doc('col_agg__store_forward_flag_value_0_count') }}"
+      - name: store_forward_flag_value_1_count
+        description: "{{ doc('col_agg__store_forward_flag_value_1_count') }}"
+      - name: payment_type_id_value_1_count
+        description: "{{ doc('col_agg__payment_type_id_value_1_count') }}"
+      - name: payment_type_id_value_2_count
+        description: "{{ doc('col_agg__payment_type_id_value_2_count') }}"
+      - name: payment_type_id_value_3_count
+        description: "{{ doc('col_agg__payment_type_id_value_3_count') }}"
+      - name: payment_type_id_value_4_count
+        description: "{{ doc('col_agg__payment_type_id_value_4_count') }}"
+      - name: payment_type_id_value_5_count
+        description: "{{ doc('col_agg__payment_type_id_value_5_count') }}"
+      - name: payment_type_id_value_6_count
+        description: "{{ doc('col_agg__payment_type_id_value_6_count') }}"
+
+  - name: agg_zones_pairwise__year
+    description: "{{ doc('agg_zones_pairwise__year') }}"
+    columns:
+      - name: year
+        description: "{{ doc('col_agg__year') }}"
+      - name: pickup_location_id
+        description: "{{ doc('col_agg__pickup_location_id') }}"
+      - name: dropoff_location_id
+        description: "{{ doc('col_agg__dropoff_location_id') }}"
+      - name: trip_count
+        description: "{{ doc('col_agg__trip_count') }}"
+      - name: trip_duration_sum
+        description: "{{ doc('col_agg__trip_duration_sum') }}"
+      - name: trip_duration_p25
+        description: "{{ doc('col_agg__trip_duration_p25') }}"
+      - name: trip_duration_p50
+        description: "{{ doc('col_agg__trip_duration_p50') }}"
+      - name: trip_duration_p75
+        description: "{{ doc('col_agg__trip_duration_p75') }}"
+      - name: trip_distance_sum
+        description: "{{ doc('col_agg__trip_distance_sum') }}"
+      - name: trip_distance_p25
+        description: "{{ doc('col_agg__trip_distance_p25') }}"
+      - name: trip_distance_p50
+        description: "{{ doc('col_agg__trip_distance_p50') }}"
+      - name: trip_distance_p75
+        description: "{{ doc('col_agg__trip_distance_p75') }}"
+      - name: total_amount_usd_sum
+        description: "{{ doc('col_agg__total_amount_usd_sum') }}"
+      - name: total_amount_usd_p25
+        description: "{{ doc('col_agg__total_amount_usd_p25') }}"
+      - name: total_amount_usd_p50
+        description: "{{ doc('col_agg__total_amount_usd_p50') }}"
+      - name: total_amount_usd_p75
+        description: "{{ doc('col_agg__total_amount_usd_p75') }}"
+      - name: fare_amount_usd_sum
+        description: "{{ doc('col_agg__fare_amount_usd_sum') }}"
+      - name: fare_amount_usd_p25
+        description: "{{ doc('col_agg__fare_amount_usd_p25') }}"
+      - name: fare_amount_usd_p50
+        description: "{{ doc('col_agg__fare_amount_usd_p50') }}"
+      - name: fare_amount_usd_p75
+        description: "{{ doc('col_agg__fare_amount_usd_p75') }}"
+      - name: tip_amount_usd_sum
+        description: "{{ doc('col_agg__tip_amount_usd_sum') }}"
+      - name: tip_amount_usd_percentage_p25
+        description: "{{ doc('col_agg__tip_amount_usd_percentage_p25') }}"
+      - name: tip_amount_usd_percentage_p50
+        description: "{{ doc('col_agg__tip_amount_usd_percentage_p50') }}"
+      - name: tip_amount_usd_percentage_p75
+        description: "{{ doc('col_agg__tip_amount_usd_percentage_p75') }}"
+      - name: tolls_amount_usd_sum
+        description: "{{ doc('col_agg__tolls_amount_usd_sum') }}"
+      - name: improvement_surcharge_usd_sum
+        description: "{{ doc('col_agg__improvement_surcharge_usd_sum') }}"
+      - name: congestion_surcharge_usd_sum
+        description: "{{ doc('col_agg__congestion_surcharge_usd_sum') }}"
+      - name: airport_fee_usd_sum
+        description: "{{ doc('col_agg__airport_fee_usd_sum') }}"
+      - name: cbd_congestion_fee_usd_sum
+        description: "{{ doc('col_agg__cbd_congestion_fee_usd_sum') }}"
+      - name: vendor_id_value_1_count
+        description: "{{ doc('col_agg__vendor_id_value_1_count') }}"
+      - name: vendor_id_value_2_count
+        description: "{{ doc('col_agg__vendor_id_value_2_count') }}"
+      - name: vendor_id_value_4_count
+        description: "{{ doc('col_agg__vendor_id_value_4_count') }}"
+      - name: vendor_id_value_5_count
+        description: "{{ doc('col_agg__vendor_id_value_5_count') }}"
+      - name: vendor_id_value_6_count
+        description: "{{ doc('col_agg__vendor_id_value_6_count') }}"
+      - name: vendor_id_value_7_count
+        description: "{{ doc('col_agg__vendor_id_value_7_count') }}"
+      - name: rate_code_id_value_1_count
+        description: "{{ doc('col_agg__rate_code_id_value_1_count') }}"
+      - name: rate_code_id_value_2_count
+        description: "{{ doc('col_agg__rate_code_id_value_2_count') }}"
+      - name: rate_code_id_value_3_count
+        description: "{{ doc('col_agg__rate_code_id_value_3_count') }}"
+      - name: rate_code_id_value_4_count
+        description: "{{ doc('col_agg__rate_code_id_value_4_count') }}"
+      - name: rate_code_id_value_5_count
+        description: "{{ doc('col_agg__rate_code_id_value_5_count') }}"
+      - name: rate_code_id_value_6_count
+        description: "{{ doc('col_agg__rate_code_id_value_6_count') }}"
+      - name: rate_code_id_value_99_count
+        description: "{{ doc('col_agg__rate_code_id_value_99_count') }}"
+      - name: store_forward_flag_value_0_count
+        description: "{{ doc('col_agg__store_forward_flag_value_0_count') }}"
+      - name: store_forward_flag_value_1_count
+        description: "{{ doc('col_agg__store_forward_flag_value_1_count') }}"
+      - name: payment_type_id_value_1_count
+        description: "{{ doc('col_agg__payment_type_id_value_1_count') }}"
+      - name: payment_type_id_value_2_count
+        description: "{{ doc('col_agg__payment_type_id_value_2_count') }}"
+      - name: payment_type_id_value_3_count
+        description: "{{ doc('col_agg__payment_type_id_value_3_count') }}"
+      - name: payment_type_id_value_4_count
+        description: "{{ doc('col_agg__payment_type_id_value_4_count') }}"
+      - name: payment_type_id_value_5_count
+        description: "{{ doc('col_agg__payment_type_id_value_5_count') }}"
+      - name: payment_type_id_value_6_count
+        description: "{{ doc('col_agg__payment_type_id_value_6_count') }}"
+
+  - name: agg_zones_pairwise__season
+    description: "{{ doc('agg_zones_pairwise__season') }}"
+    columns:
+      - name: season
+        description: "{{ doc('col_agg__season') }}"
+      - name: pickup_location_id
+        description: "{{ doc('col_agg__pickup_location_id') }}"
+      - name: dropoff_location_id
+        description: "{{ doc('col_agg__dropoff_location_id') }}"
+      - name: trip_count
+        description: "{{ doc('col_agg__trip_count') }}"
+      - name: trip_duration_sum
+        description: "{{ doc('col_agg__trip_duration_sum') }}"
+      - name: trip_duration_p25
+        description: "{{ doc('col_agg__trip_duration_p25') }}"
+      - name: trip_duration_p50
+        description: "{{ doc('col_agg__trip_duration_p50') }}"
+      - name: trip_duration_p75
+        description: "{{ doc('col_agg__trip_duration_p75') }}"
+      - name: trip_distance_sum
+        description: "{{ doc('col_agg__trip_distance_sum') }}"
+      - name: trip_distance_p25
+        description: "{{ doc('col_agg__trip_distance_p25') }}"
+      - name: trip_distance_p50
+        description: "{{ doc('col_agg__trip_distance_p50') }}"
+      - name: trip_distance_p75
+        description: "{{ doc('col_agg__trip_distance_p75') }}"
+      - name: total_amount_usd_sum
+        description: "{{ doc('col_agg__total_amount_usd_sum') }}"
+      - name: total_amount_usd_p25
+        description: "{{ doc('col_agg__total_amount_usd_p25') }}"
+      - name: total_amount_usd_p50
+        description: "{{ doc('col_agg__total_amount_usd_p50') }}"
+      - name: total_amount_usd_p75
+        description: "{{ doc('col_agg__total_amount_usd_p75') }}"
+      - name: fare_amount_usd_sum
+        description: "{{ doc('col_agg__fare_amount_usd_sum') }}"
+      - name: fare_amount_usd_p25
+        description: "{{ doc('col_agg__fare_amount_usd_p25') }}"
+      - name: fare_amount_usd_p50
+        description: "{{ doc('col_agg__fare_amount_usd_p50') }}"
+      - name: fare_amount_usd_p75
+        description: "{{ doc('col_agg__fare_amount_usd_p75') }}"
+      - name: tip_amount_usd_sum
+        description: "{{ doc('col_agg__tip_amount_usd_sum') }}"
+      - name: tip_amount_usd_percentage_p25
+        description: "{{ doc('col_agg__tip_amount_usd_percentage_p25') }}"
+      - name: tip_amount_usd_percentage_p50
+        description: "{{ doc('col_agg__tip_amount_usd_percentage_p50') }}"
+      - name: tip_amount_usd_percentage_p75
+        description: "{{ doc('col_agg__tip_amount_usd_percentage_p75') }}"
+      - name: tolls_amount_usd_sum
+        description: "{{ doc('col_agg__tolls_amount_usd_sum') }}"
+      - name: improvement_surcharge_usd_sum
+        description: "{{ doc('col_agg__improvement_surcharge_usd_sum') }}"
+      - name: congestion_surcharge_usd_sum
+        description: "{{ doc('col_agg__congestion_surcharge_usd_sum') }}"
+      - name: airport_fee_usd_sum
+        description: "{{ doc('col_agg__airport_fee_usd_sum') }}"
+      - name: cbd_congestion_fee_usd_sum
+        description: "{{ doc('col_agg__cbd_congestion_fee_usd_sum') }}"
+      - name: vendor_id_value_1_count
+        description: "{{ doc('col_agg__vendor_id_value_1_count') }}"
+      - name: vendor_id_value_2_count
+        description: "{{ doc('col_agg__vendor_id_value_2_count') }}"
+      - name: vendor_id_value_4_count
+        description: "{{ doc('col_agg__vendor_id_value_4_count') }}"
+      - name: vendor_id_value_5_count
+        description: "{{ doc('col_agg__vendor_id_value_5_count') }}"
+      - name: vendor_id_value_6_count
+        description: "{{ doc('col_agg__vendor_id_value_6_count') }}"
+      - name: vendor_id_value_7_count
+        description: "{{ doc('col_agg__vendor_id_value_7_count') }}"
+      - name: rate_code_id_value_1_count
+        description: "{{ doc('col_agg__rate_code_id_value_1_count') }}"
+      - name: rate_code_id_value_2_count
+        description: "{{ doc('col_agg__rate_code_id_value_2_count') }}"
+      - name: rate_code_id_value_3_count
+        description: "{{ doc('col_agg__rate_code_id_value_3_count') }}"
+      - name: rate_code_id_value_4_count
+        description: "{{ doc('col_agg__rate_code_id_value_4_count') }}"
+      - name: rate_code_id_value_5_count
+        description: "{{ doc('col_agg__rate_code_id_value_5_count') }}"
+      - name: rate_code_id_value_6_count
+        description: "{{ doc('col_agg__rate_code_id_value_6_count') }}"
+      - name: rate_code_id_value_99_count
+        description: "{{ doc('col_agg__rate_code_id_value_99_count') }}"
+      - name: store_forward_flag_value_0_count
+        description: "{{ doc('col_agg__store_forward_flag_value_0_count') }}"
+      - name: store_forward_flag_value_1_count
+        description: "{{ doc('col_agg__store_forward_flag_value_1_count') }}"
+      - name: payment_type_id_value_1_count
+        description: "{{ doc('col_agg__payment_type_id_value_1_count') }}"
+      - name: payment_type_id_value_2_count
+        description: "{{ doc('col_agg__payment_type_id_value_2_count') }}"
+      - name: payment_type_id_value_3_count
+        description: "{{ doc('col_agg__payment_type_id_value_3_count') }}"
+      - name: payment_type_id_value_4_count
+        description: "{{ doc('col_agg__payment_type_id_value_4_count') }}"
+      - name: payment_type_id_value_5_count
+        description: "{{ doc('col_agg__payment_type_id_value_5_count') }}"
+      - name: payment_type_id_value_6_count
+        description: "{{ doc('col_agg__payment_type_id_value_6_count') }}"
+
+  - name: agg_zones_pairwise__month
+    description: "{{ doc('agg_zones_pairwise__month') }}"
+    columns:
+      - name: month
+        description: "{{ doc('col_agg__month') }}"
+      - name: pickup_location_id
+        description: "{{ doc('col_agg__pickup_location_id') }}"
+      - name: dropoff_location_id
+        description: "{{ doc('col_agg__dropoff_location_id') }}"
+      - name: trip_count
+        description: "{{ doc('col_agg__trip_count') }}"
+      - name: trip_duration_sum
+        description: "{{ doc('col_agg__trip_duration_sum') }}"
+      - name: trip_duration_p25
+        description: "{{ doc('col_agg__trip_duration_p25') }}"
+      - name: trip_duration_p50
+        description: "{{ doc('col_agg__trip_duration_p50') }}"
+      - name: trip_duration_p75
+        description: "{{ doc('col_agg__trip_duration_p75') }}"
+      - name: trip_distance_sum
+        description: "{{ doc('col_agg__trip_distance_sum') }}"
+      - name: trip_distance_p25
+        description: "{{ doc('col_agg__trip_distance_p25') }}"
+      - name: trip_distance_p50
+        description: "{{ doc('col_agg__trip_distance_p50') }}"
+      - name: trip_distance_p75
+        description: "{{ doc('col_agg__trip_distance_p75') }}"
+      - name: total_amount_usd_sum
+        description: "{{ doc('col_agg__total_amount_usd_sum') }}"
+      - name: total_amount_usd_p25
+        description: "{{ doc('col_agg__total_amount_usd_p25') }}"
+      - name: total_amount_usd_p50
+        description: "{{ doc('col_agg__total_amount_usd_p50') }}"
+      - name: total_amount_usd_p75
+        description: "{{ doc('col_agg__total_amount_usd_p75') }}"
+      - name: fare_amount_usd_sum
+        description: "{{ doc('col_agg__fare_amount_usd_sum') }}"
+      - name: fare_amount_usd_p25
+        description: "{{ doc('col_agg__fare_amount_usd_p25') }}"
+      - name: fare_amount_usd_p50
+        description: "{{ doc('col_agg__fare_amount_usd_p50') }}"
+      - name: fare_amount_usd_p75
+        description: "{{ doc('col_agg__fare_amount_usd_p75') }}"
+      - name: tip_amount_usd_sum
+        description: "{{ doc('col_agg__tip_amount_usd_sum') }}"
+      - name: tip_amount_usd_percentage_p25
+        description: "{{ doc('col_agg__tip_amount_usd_percentage_p25') }}"
+      - name: tip_amount_usd_percentage_p50
+        description: "{{ doc('col_agg__tip_amount_usd_percentage_p50') }}"
+      - name: tip_amount_usd_percentage_p75
+        description: "{{ doc('col_agg__tip_amount_usd_percentage_p75') }}"
+      - name: tolls_amount_usd_sum
+        description: "{{ doc('col_agg__tolls_amount_usd_sum') }}"
+      - name: improvement_surcharge_usd_sum
+        description: "{{ doc('col_agg__improvement_surcharge_usd_sum') }}"
+      - name: congestion_surcharge_usd_sum
+        description: "{{ doc('col_agg__congestion_surcharge_usd_sum') }}"
+      - name: airport_fee_usd_sum
+        description: "{{ doc('col_agg__airport_fee_usd_sum') }}"
+      - name: cbd_congestion_fee_usd_sum
+        description: "{{ doc('col_agg__cbd_congestion_fee_usd_sum') }}"
+      - name: vendor_id_value_1_count
+        description: "{{ doc('col_agg__vendor_id_value_1_count') }}"
+      - name: vendor_id_value_2_count
+        description: "{{ doc('col_agg__vendor_id_value_2_count') }}"
+      - name: vendor_id_value_4_count
+        description: "{{ doc('col_agg__vendor_id_value_4_count') }}"
+      - name: vendor_id_value_5_count
+        description: "{{ doc('col_agg__vendor_id_value_5_count') }}"
+      - name: vendor_id_value_6_count
+        description: "{{ doc('col_agg__vendor_id_value_6_count') }}"
+      - name: vendor_id_value_7_count
+        description: "{{ doc('col_agg__vendor_id_value_7_count') }}"
+      - name: rate_code_id_value_1_count
+        description: "{{ doc('col_agg__rate_code_id_value_1_count') }}"
+      - name: rate_code_id_value_2_count
+        description: "{{ doc('col_agg__rate_code_id_value_2_count') }}"
+      - name: rate_code_id_value_3_count
+        description: "{{ doc('col_agg__rate_code_id_value_3_count') }}"
+      - name: rate_code_id_value_4_count
+        description: "{{ doc('col_agg__rate_code_id_value_4_count') }}"
+      - name: rate_code_id_value_5_count
+        description: "{{ doc('col_agg__rate_code_id_value_5_count') }}"
+      - name: rate_code_id_value_6_count
+        description: "{{ doc('col_agg__rate_code_id_value_6_count') }}"
+      - name: rate_code_id_value_99_count
+        description: "{{ doc('col_agg__rate_code_id_value_99_count') }}"
+      - name: store_forward_flag_value_0_count
+        description: "{{ doc('col_agg__store_forward_flag_value_0_count') }}"
+      - name: store_forward_flag_value_1_count
+        description: "{{ doc('col_agg__store_forward_flag_value_1_count') }}"
+      - name: payment_type_id_value_1_count
+        description: "{{ doc('col_agg__payment_type_id_value_1_count') }}"
+      - name: payment_type_id_value_2_count
+        description: "{{ doc('col_agg__payment_type_id_value_2_count') }}"
+      - name: payment_type_id_value_3_count
+        description: "{{ doc('col_agg__payment_type_id_value_3_count') }}"
+      - name: payment_type_id_value_4_count
+        description: "{{ doc('col_agg__payment_type_id_value_4_count') }}"
+      - name: payment_type_id_value_5_count
+        description: "{{ doc('col_agg__payment_type_id_value_5_count') }}"
+      - name: payment_type_id_value_6_count
+        description: "{{ doc('col_agg__payment_type_id_value_6_count') }}"
+
+  - name: agg_zones_pairwise__dow
+    description: "{{ doc('agg_zones_pairwise__dow') }}"
+    columns:
+      - name: dow
+        description: "{{ doc('col_agg__dow') }}"
+      - name: pickup_location_id
+        description: "{{ doc('col_agg__pickup_location_id') }}"
+      - name: dropoff_location_id
+        description: "{{ doc('col_agg__dropoff_location_id') }}"
+      - name: trip_count
+        description: "{{ doc('col_agg__trip_count') }}"
+      - name: trip_duration_sum
+        description: "{{ doc('col_agg__trip_duration_sum') }}"
+      - name: trip_duration_p25
+        description: "{{ doc('col_agg__trip_duration_p25') }}"
+      - name: trip_duration_p50
+        description: "{{ doc('col_agg__trip_duration_p50') }}"
+      - name: trip_duration_p75
+        description: "{{ doc('col_agg__trip_duration_p75') }}"
+      - name: trip_distance_sum
+        description: "{{ doc('col_agg__trip_distance_sum') }}"
+      - name: trip_distance_p25
+        description: "{{ doc('col_agg__trip_distance_p25') }}"
+      - name: trip_distance_p50
+        description: "{{ doc('col_agg__trip_distance_p50') }}"
+      - name: trip_distance_p75
+        description: "{{ doc('col_agg__trip_distance_p75') }}"
+      - name: total_amount_usd_sum
+        description: "{{ doc('col_agg__total_amount_usd_sum') }}"
+      - name: total_amount_usd_p25
+        description: "{{ doc('col_agg__total_amount_usd_p25') }}"
+      - name: total_amount_usd_p50
+        description: "{{ doc('col_agg__total_amount_usd_p50') }}"
+      - name: total_amount_usd_p75
+        description: "{{ doc('col_agg__total_amount_usd_p75') }}"
+      - name: fare_amount_usd_sum
+        description: "{{ doc('col_agg__fare_amount_usd_sum') }}"
+      - name: fare_amount_usd_p25
+        description: "{{ doc('col_agg__fare_amount_usd_p25') }}"
+      - name: fare_amount_usd_p50
+        description: "{{ doc('col_agg__fare_amount_usd_p50') }}"
+      - name: fare_amount_usd_p75
+        description: "{{ doc('col_agg__fare_amount_usd_p75') }}"
+      - name: tip_amount_usd_sum
+        description: "{{ doc('col_agg__tip_amount_usd_sum') }}"
+      - name: tip_amount_usd_percentage_p25
+        description: "{{ doc('col_agg__tip_amount_usd_percentage_p25') }}"
+      - name: tip_amount_usd_percentage_p50
+        description: "{{ doc('col_agg__tip_amount_usd_percentage_p50') }}"
+      - name: tip_amount_usd_percentage_p75
+        description: "{{ doc('col_agg__tip_amount_usd_percentage_p75') }}"
+      - name: tolls_amount_usd_sum
+        description: "{{ doc('col_agg__tolls_amount_usd_sum') }}"
+      - name: improvement_surcharge_usd_sum
+        description: "{{ doc('col_agg__improvement_surcharge_usd_sum') }}"
+      - name: congestion_surcharge_usd_sum
+        description: "{{ doc('col_agg__congestion_surcharge_usd_sum') }}"
+      - name: airport_fee_usd_sum
+        description: "{{ doc('col_agg__airport_fee_usd_sum') }}"
+      - name: cbd_congestion_fee_usd_sum
+        description: "{{ doc('col_agg__cbd_congestion_fee_usd_sum') }}"
+      - name: vendor_id_value_1_count
+        description: "{{ doc('col_agg__vendor_id_value_1_count') }}"
+      - name: vendor_id_value_2_count
+        description: "{{ doc('col_agg__vendor_id_value_2_count') }}"
+      - name: vendor_id_value_4_count
+        description: "{{ doc('col_agg__vendor_id_value_4_count') }}"
+      - name: vendor_id_value_5_count
+        description: "{{ doc('col_agg__vendor_id_value_5_count') }}"
+      - name: vendor_id_value_6_count
+        description: "{{ doc('col_agg__vendor_id_value_6_count') }}"
+      - name: vendor_id_value_7_count
+        description: "{{ doc('col_agg__vendor_id_value_7_count') }}"
+      - name: rate_code_id_value_1_count
+        description: "{{ doc('col_agg__rate_code_id_value_1_count') }}"
+      - name: rate_code_id_value_2_count
+        description: "{{ doc('col_agg__rate_code_id_value_2_count') }}"
+      - name: rate_code_id_value_3_count
+        description: "{{ doc('col_agg__rate_code_id_value_3_count') }}"
+      - name: rate_code_id_value_4_count
+        description: "{{ doc('col_agg__rate_code_id_value_4_count') }}"
+      - name: rate_code_id_value_5_count
+        description: "{{ doc('col_agg__rate_code_id_value_5_count') }}"
+      - name: rate_code_id_value_6_count
+        description: "{{ doc('col_agg__rate_code_id_value_6_count') }}"
+      - name: rate_code_id_value_99_count
+        description: "{{ doc('col_agg__rate_code_id_value_99_count') }}"
+      - name: store_forward_flag_value_0_count
+        description: "{{ doc('col_agg__store_forward_flag_value_0_count') }}"
+      - name: store_forward_flag_value_1_count
+        description: "{{ doc('col_agg__store_forward_flag_value_1_count') }}"
+      - name: payment_type_id_value_1_count
+        description: "{{ doc('col_agg__payment_type_id_value_1_count') }}"
+      - name: payment_type_id_value_2_count
+        description: "{{ doc('col_agg__payment_type_id_value_2_count') }}"
+      - name: payment_type_id_value_3_count
+        description: "{{ doc('col_agg__payment_type_id_value_3_count') }}"
+      - name: payment_type_id_value_4_count
+        description: "{{ doc('col_agg__payment_type_id_value_4_count') }}"
+      - name: payment_type_id_value_5_count
+        description: "{{ doc('col_agg__payment_type_id_value_5_count') }}"
+      - name: payment_type_id_value_6_count
+        description: "{{ doc('col_agg__payment_type_id_value_6_count') }}"
+
+  - name: agg_zones_pairwise__period
+    description: "{{ doc('agg_zones_pairwise__period') }}"
+    columns:
+      - name: period
+        description: "{{ doc('col_agg__period') }}"
+      - name: pickup_location_id
+        description: "{{ doc('col_agg__pickup_location_id') }}"
+      - name: dropoff_location_id
+        description: "{{ doc('col_agg__dropoff_location_id') }}"
+      - name: trip_count
+        description: "{{ doc('col_agg__trip_count') }}"
+      - name: trip_duration_sum
+        description: "{{ doc('col_agg__trip_duration_sum') }}"
+      - name: trip_duration_p25
+        description: "{{ doc('col_agg__trip_duration_p25') }}"
+      - name: trip_duration_p50
+        description: "{{ doc('col_agg__trip_duration_p50') }}"
+      - name: trip_duration_p75
+        description: "{{ doc('col_agg__trip_duration_p75') }}"
+      - name: trip_distance_sum
+        description: "{{ doc('col_agg__trip_distance_sum') }}"
+      - name: trip_distance_p25
+        description: "{{ doc('col_agg__trip_distance_p25') }}"
+      - name: trip_distance_p50
+        description: "{{ doc('col_agg__trip_distance_p50') }}"
+      - name: trip_distance_p75
+        description: "{{ doc('col_agg__trip_distance_p75') }}"
+      - name: total_amount_usd_sum
+        description: "{{ doc('col_agg__total_amount_usd_sum') }}"
+      - name: total_amount_usd_p25
+        description: "{{ doc('col_agg__total_amount_usd_p25') }}"
+      - name: total_amount_usd_p50
+        description: "{{ doc('col_agg__total_amount_usd_p50') }}"
+      - name: total_amount_usd_p75
+        description: "{{ doc('col_agg__total_amount_usd_p75') }}"
+      - name: fare_amount_usd_sum
+        description: "{{ doc('col_agg__fare_amount_usd_sum') }}"
+      - name: fare_amount_usd_p25
+        description: "{{ doc('col_agg__fare_amount_usd_p25') }}"
+      - name: fare_amount_usd_p50
+        description: "{{ doc('col_agg__fare_amount_usd_p50') }}"
+      - name: fare_amount_usd_p75
+        description: "{{ doc('col_agg__fare_amount_usd_p75') }}"
+      - name: tip_amount_usd_sum
+        description: "{{ doc('col_agg__tip_amount_usd_sum') }}"
+      - name: tip_amount_usd_percentage_p25
+        description: "{{ doc('col_agg__tip_amount_usd_percentage_p25') }}"
+      - name: tip_amount_usd_percentage_p50
+        description: "{{ doc('col_agg__tip_amount_usd_percentage_p50') }}"
+      - name: tip_amount_usd_percentage_p75
+        description: "{{ doc('col_agg__tip_amount_usd_percentage_p75') }}"
+      - name: tolls_amount_usd_sum
+        description: "{{ doc('col_agg__tolls_amount_usd_sum') }}"
+      - name: improvement_surcharge_usd_sum
+        description: "{{ doc('col_agg__improvement_surcharge_usd_sum') }}"
+      - name: congestion_surcharge_usd_sum
+        description: "{{ doc('col_agg__congestion_surcharge_usd_sum') }}"
+      - name: airport_fee_usd_sum
+        description: "{{ doc('col_agg__airport_fee_usd_sum') }}"
+      - name: cbd_congestion_fee_usd_sum
+        description: "{{ doc('col_agg__cbd_congestion_fee_usd_sum') }}"
+      - name: vendor_id_value_1_count
+        description: "{{ doc('col_agg__vendor_id_value_1_count') }}"
+      - name: vendor_id_value_2_count
+        description: "{{ doc('col_agg__vendor_id_value_2_count') }}"
+      - name: vendor_id_value_4_count
+        description: "{{ doc('col_agg__vendor_id_value_4_count') }}"
+      - name: vendor_id_value_5_count
+        description: "{{ doc('col_agg__vendor_id_value_5_count') }}"
+      - name: vendor_id_value_6_count
+        description: "{{ doc('col_agg__vendor_id_value_6_count') }}"
+      - name: vendor_id_value_7_count
+        description: "{{ doc('col_agg__vendor_id_value_7_count') }}"
+      - name: rate_code_id_value_1_count
+        description: "{{ doc('col_agg__rate_code_id_value_1_count') }}"
+      - name: rate_code_id_value_2_count
+        description: "{{ doc('col_agg__rate_code_id_value_2_count') }}"
+      - name: rate_code_id_value_3_count
+        description: "{{ doc('col_agg__rate_code_id_value_3_count') }}"
+      - name: rate_code_id_value_4_count
+        description: "{{ doc('col_agg__rate_code_id_value_4_count') }}"
+      - name: rate_code_id_value_5_count
+        description: "{{ doc('col_agg__rate_code_id_value_5_count') }}"
+      - name: rate_code_id_value_6_count
+        description: "{{ doc('col_agg__rate_code_id_value_6_count') }}"
+      - name: rate_code_id_value_99_count
+        description: "{{ doc('col_agg__rate_code_id_value_99_count') }}"
+      - name: store_forward_flag_value_0_count
+        description: "{{ doc('col_agg__store_forward_flag_value_0_count') }}"
+      - name: store_forward_flag_value_1_count
+        description: "{{ doc('col_agg__store_forward_flag_value_1_count') }}"
+      - name: payment_type_id_value_1_count
+        description: "{{ doc('col_agg__payment_type_id_value_1_count') }}"
+      - name: payment_type_id_value_2_count
+        description: "{{ doc('col_agg__payment_type_id_value_2_count') }}"
+      - name: payment_type_id_value_3_count
+        description: "{{ doc('col_agg__payment_type_id_value_3_count') }}"
+      - name: payment_type_id_value_4_count
+        description: "{{ doc('col_agg__payment_type_id_value_4_count') }}"
+      - name: payment_type_id_value_5_count
+        description: "{{ doc('col_agg__payment_type_id_value_5_count') }}"
+      - name: payment_type_id_value_6_count
+        description: "{{ doc('col_agg__payment_type_id_value_6_count') }}"
+
+  - name: agg_zones_pairwise__hour
+    description: "{{ doc('agg_zones_pairwise__hour') }}"
+    columns:
+      - name: hour
+        description: "{{ doc('col_agg__hour') }}"
+      - name: pickup_location_id
+        description: "{{ doc('col_agg__pickup_location_id') }}"
+      - name: dropoff_location_id
+        description: "{{ doc('col_agg__dropoff_location_id') }}"
+      - name: trip_count
+        description: "{{ doc('col_agg__trip_count') }}"
+      - name: trip_duration_sum
+        description: "{{ doc('col_agg__trip_duration_sum') }}"
+      - name: trip_duration_p25
+        description: "{{ doc('col_agg__trip_duration_p25') }}"
+      - name: trip_duration_p50
+        description: "{{ doc('col_agg__trip_duration_p50') }}"
+      - name: trip_duration_p75
+        description: "{{ doc('col_agg__trip_duration_p75') }}"
+      - name: trip_distance_sum
+        description: "{{ doc('col_agg__trip_distance_sum') }}"
+      - name: trip_distance_p25
+        description: "{{ doc('col_agg__trip_distance_p25') }}"
+      - name: trip_distance_p50
+        description: "{{ doc('col_agg__trip_distance_p50') }}"
+      - name: trip_distance_p75
+        description: "{{ doc('col_agg__trip_distance_p75') }}"
+      - name: total_amount_usd_sum
+        description: "{{ doc('col_agg__total_amount_usd_sum') }}"
+      - name: total_amount_usd_p25
+        description: "{{ doc('col_agg__total_amount_usd_p25') }}"
+      - name: total_amount_usd_p50
+        description: "{{ doc('col_agg__total_amount_usd_p50') }}"
+      - name: total_amount_usd_p75
+        description: "{{ doc('col_agg__total_amount_usd_p75') }}"
+      - name: fare_amount_usd_sum
+        description: "{{ doc('col_agg__fare_amount_usd_sum') }}"
+      - name: fare_amount_usd_p25
+        description: "{{ doc('col_agg__fare_amount_usd_p25') }}"
+      - name: fare_amount_usd_p50
+        description: "{{ doc('col_agg__fare_amount_usd_p50') }}"
+      - name: fare_amount_usd_p75
+        description: "{{ doc('col_agg__fare_amount_usd_p75') }}"
+      - name: tip_amount_usd_sum
+        description: "{{ doc('col_agg__tip_amount_usd_sum') }}"
+      - name: tip_amount_usd_percentage_p25
+        description: "{{ doc('col_agg__tip_amount_usd_percentage_p25') }}"
+      - name: tip_amount_usd_percentage_p50
+        description: "{{ doc('col_agg__tip_amount_usd_percentage_p50') }}"
+      - name: tip_amount_usd_percentage_p75
+        description: "{{ doc('col_agg__tip_amount_usd_percentage_p75') }}"
+      - name: tolls_amount_usd_sum
+        description: "{{ doc('col_agg__tolls_amount_usd_sum') }}"
+      - name: improvement_surcharge_usd_sum
+        description: "{{ doc('col_agg__improvement_surcharge_usd_sum') }}"
+      - name: congestion_surcharge_usd_sum
+        description: "{{ doc('col_agg__congestion_surcharge_usd_sum') }}"
+      - name: airport_fee_usd_sum
+        description: "{{ doc('col_agg__airport_fee_usd_sum') }}"
+      - name: cbd_congestion_fee_usd_sum
+        description: "{{ doc('col_agg__cbd_congestion_fee_usd_sum') }}"
+      - name: vendor_id_value_1_count
+        description: "{{ doc('col_agg__vendor_id_value_1_count') }}"
+      - name: vendor_id_value_2_count
+        description: "{{ doc('col_agg__vendor_id_value_2_count') }}"
+      - name: vendor_id_value_4_count
+        description: "{{ doc('col_agg__vendor_id_value_4_count') }}"
+      - name: vendor_id_value_5_count
+        description: "{{ doc('col_agg__vendor_id_value_5_count') }}"
+      - name: vendor_id_value_6_count
+        description: "{{ doc('col_agg__vendor_id_value_6_count') }}"
+      - name: vendor_id_value_7_count
+        description: "{{ doc('col_agg__vendor_id_value_7_count') }}"
+      - name: rate_code_id_value_1_count
+        description: "{{ doc('col_agg__rate_code_id_value_1_count') }}"
+      - name: rate_code_id_value_2_count
+        description: "{{ doc('col_agg__rate_code_id_value_2_count') }}"
+      - name: rate_code_id_value_3_count
+        description: "{{ doc('col_agg__rate_code_id_value_3_count') }}"
+      - name: rate_code_id_value_4_count
+        description: "{{ doc('col_agg__rate_code_id_value_4_count') }}"
+      - name: rate_code_id_value_5_count
+        description: "{{ doc('col_agg__rate_code_id_value_5_count') }}"
+      - name: rate_code_id_value_6_count
+        description: "{{ doc('col_agg__rate_code_id_value_6_count') }}"
+      - name: rate_code_id_value_99_count
+        description: "{{ doc('col_agg__rate_code_id_value_99_count') }}"
+      - name: store_forward_flag_value_0_count
+        description: "{{ doc('col_agg__store_forward_flag_value_0_count') }}"
+      - name: store_forward_flag_value_1_count
+        description: "{{ doc('col_agg__store_forward_flag_value_1_count') }}"
+      - name: payment_type_id_value_1_count
+        description: "{{ doc('col_agg__payment_type_id_value_1_count') }}"
+      - name: payment_type_id_value_2_count
+        description: "{{ doc('col_agg__payment_type_id_value_2_count') }}"
+      - name: payment_type_id_value_3_count
+        description: "{{ doc('col_agg__payment_type_id_value_3_count') }}"
+      - name: payment_type_id_value_4_count
+        description: "{{ doc('col_agg__payment_type_id_value_4_count') }}"
+      - name: payment_type_id_value_5_count
+        description: "{{ doc('col_agg__payment_type_id_value_5_count') }}"
+      - name: payment_type_id_value_6_count
+        description: "{{ doc('col_agg__payment_type_id_value_6_count') }}"

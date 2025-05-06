@@ -74,6 +74,90 @@ macros:
       - name: overides
         type: dict[str, str]
         description: Dictionary specifying rules for overides of default config
+
+  - name: gen_percentile_cols
+    description: "{{ doc('gen_percentile_cols') }}"
+    arguments:
+      - name: colname
+        type: str
+        description: Name of base column to generate percentile calculations from.
+      - name: percentiles
+        type: list[float]
+        description: Percentiles to calculate.
+      - name: gen_sum
+        type: bool
+        description: Whether to generate sum column; defaults to True.
+  - name: gen_value_count_cols
+    description: "{{ doc('gen_value_count_cols') }}"
+    arguments:
+      - name: colname
+        type: str
+        description: Name of base column to generate value counts calculations from.
+      - name: candidates
+        type: list[int]
+        description: List of candidate values in the column.
+  - name: gen_sum_col
+    description: "{{ doc('gen_sum_col') }}"
+    arguments:
+      - name: colname
+        type: str
+        description: Name of base column to generate summation calculation from.
+  - name: gen_percentile_colnames
+    description: "{{ doc('gen_percentile_colnames') }}"
+    arguments:
+      - name: prefix
+        type: str
+        description: A prefix indicating which table the columns are from, to prepend in column names.
+      - name: colname
+        type: str
+        description: Name of base column to generate percentile column names from.
+      - name: percentiles
+        type: list[float]
+        description: Percentiles to calculate.
+      - name: gen_sum
+        type: bool
+        description: Whether to generate sum column; defaults to True.
+  - name: gen_value_count_colnames
+    description: "{{ doc('gen_value_count_colnames') }}"
+    arguments:
+      - name: prefix
+        type: str
+        description: A prefix indicating which table the columns are from, to prepend in column names.
+      - name: colname
+        type: str
+        description: Name of base column to generate value counts column names from.
+      - name: candidates
+        type: list[int]
+        description: List of candidate values in the column.
+  - name: gen_sum_colname
+    description: "{{ doc('gen_sum_colname') }}"
+    arguments:
+      - name: prefix
+        type: str
+        description: A prefix indicating which table the columns are from, to prepend in column names.
+      - name: colname
+        type: str
+        description: Name of base column to generate sum column name from.
+
+  - name: dim_template
+    description: "{{ doc('dim_template') }}"
+    arguments:
+      - name: colname
+        type: str
+        description: Name of base column to generate dim table from; see `value_lookups` seed.
+  - name: agg_zones_pairwise__proj_template
+    description: "{{ doc('agg_zones_pairwise__proj_template') }}"
+    arguments:
+      - name: granularity
+        type: str
+        description: Granularity of aggregation to generate to. Supports `year`, `season`, `month`, `dow`, `period`, `hour`.
+      - name: limit
+        type: int
+        description: Limits number of rows to use from `int_trips__all` when reffing.
+      - name: offset
+        type: int
+        description: Offset number of rows to use from `int_trips__all` when reffing.
+
   - name: test_test_in_range
     description: Generic test for looking at whether a column lies within a range.
     arguments:
@@ -86,3 +170,9 @@ macros:
         description: Lower bound for testing if column has value >= `lower_bound`
       - name: upper_bound
         description: Upper bound for testing if column has value <= `upper_bound`
+  - name: test_test_non_negative
+    description: Generic test for looking at whether a column contains negative values
+    arguments:
+      - name: column_name
+        type: str
+        description: The column of model to be tested

@@ -1,73 +1,4 @@
-{% docs value_lookups %}
-
-Value lookup tables for staging model.
-
-The data:
-
-|column_name       |column_value|value_description                |value_details              |
-|------------------|------------|---------------------------------|---------------------------|
-|vendor_id         |1           |Creative Mobile Technologies, LLC|                           |
-|vendor_id         |2           |Curb Mobility, LLC               |                           |
-|vendor_id         |4           |                                 |                           |
-|vendor_id         |5           |                                 |                           |
-|vendor_id         |6           |Myle Technologies Inc            |                           |
-|vendor_id         |7           |Helix                            |                           |
-|rate_code_id      |1           |Standard rate                    |                           |
-|rate_code_id      |2           |JFK                              |                           |
-|rate_code_id      |3           |Newark                           |                           |
-|rate_code_id      |4           |Nassau or Westchester            |                           |
-|rate_code_id      |5           |Negotiated fare                  |                           |
-|rate_code_id      |6           |Group ride                       |                           |
-|rate_code_id      |99          |Null/unknown                     |                           |
-|store_forward_flag|0           |Store and forward trip           |                           |
-|store_forward_flag|1           |Not a store and forward trip     |                           |
-|payment_type_id   |0           |Flex Fare trip                   |                           |
-|payment_type_id   |1           |Credit card                      |                           |
-|payment_type_id   |2           |Cash                             |                           |
-|payment_type_id   |3           |No charge                        |                           |
-|payment_type_id   |4           |Dispute                          |                           |
-|payment_type_id   |5           |Unknown                          |                           |
-|payment_type_id   |6           |Voided trip                      |                           |
-|season            |1           |Spring                           |month 3, 4, 5              |
-|season            |2           |Summer                           |month 6, 7, 8              |
-|season            |3           |Fall                             |month 9, 10, 11            |
-|season            |4           |Winter                           |month 12, 1, 2             |
-|month             |1           |January                          |                           |
-|month             |2           |February                         |                           |
-|month             |3           |March                            |                           |
-|month             |4           |April                            |                           |
-|month             |5           |May                              |                           |
-|month             |6           |June                             |                           |
-|month             |7           |July                             |                           |
-|month             |8           |August                           |                           |
-|month             |9           |September                        |                           |
-|month             |10          |October                          |                           |
-|month             |11          |November                         |                           |
-|month             |12          |December                         |                           |
-|dow               |1           |Monday                           |                           |
-|dow               |2           |Tuesday                          |                           |
-|dow               |3           |Wednesday                        |                           |
-|dow               |4           |Thursday                         |                           |
-|dow               |5           |Friday                           |                           |
-|dow               |6           |Saturday                         |                           |
-|dow               |7           |Sunday                           |                           |
-|period            |1           |Early Morning                    |hour 5, 6, 7               |
-|period            |2           |Morning Peak                     |hour 8, 9                  |
-|period            |3           |Midday                           |hour 10, 11, 12, 13, 14, 15|
-|period            |4           |Afternoon Peak                   |hour 16, 17, 18            |
-|period            |5           |Evening                          |hour 19, 20, 21            |
-|period            |6           |Night                            |hour 22, 23                |
-|period            |7           |Late Night                       |hour 0, 1, 2, 3, 4         |
-
-{% enddocs %}
-
-{% docs taxi_zone_lookups %}
-
-Dimension table for location ids, used in `pickup_location_id` and `dropoff_location_id`
-in staging models.
-
-The data:
-
+{% docs dim__location_id %}
 |location_id       |borough|zone                             |service_zone|
 |------------------|-------|---------------------------------|------------|
 |1                 |EWR    |Newark Airport                   |EWR         |
@@ -336,3 +267,96 @@ The data:
 |264               |Unknown|N/A                              |N/A         |
 |265               |N/A    |Outside of NYC                   |N/A         |
 {% enddocs %}
+
+{% docs dim__vendor_id %}
+|vendor_id   |value_description                |
+|------------|---------------------------------|
+|1           |Creative Mobile Technologies, LLC|
+|2           |Curb Mobility, LLC               |
+|4           |                                 |
+|5           |                                 |
+|6           |Myle Technologies Inc            |
+|7           |Helix                            |
+{% enddocs %}
+
+{% docs dim__rate_code_id %}
+|rate_code_id|value_description                |
+|------------|---------------------------------|
+|1           |Standard rate                    |
+|2           |JFK                              |
+|3           |Newark                           |
+|4           |Nassau or Westchester            |
+|5           |Negotiated fare                  |
+|6           |Group ride                       |
+|99          |Null/unknown                     |
+{% enddocs %}
+
+{% docs dim__store_forward_flag %}
+|store_forward_flag|value_description                |
+|------------------|---------------------------------|
+|0                 |Store and forward trip           |
+|1                 |Not a store and forward trip     |
+{% enddocs %}
+
+{% docs dim__payment_type_id %}
+|payment_type_id|value_description                |
+|---------------|---------------------------------|
+|0              |Flex Fare trip                   |
+|1              |Credit card                      |
+|2              |Cash                             |
+|3              |No charge                        |
+|4              |Dispute                          |
+|5              |Unknown                          |
+|6              |Voided trip                      |
+{% enddocs %}
+
+{% docs dim__season %}
+|season      |value_description                |value_details              |
+|------------|---------------------------------|---------------------------|
+|1           |Spring                           |month 3, 4, 5              |
+|2           |Summer                           |month 6, 7, 8              |
+|3           |Fall                             |month 9, 10, 11            |
+|4           |Winter                           |month 12, 1, 2             |
+{% enddocs %}
+
+{% docs dim__month %}
+|month       |value_description                |
+|------------|---------------------------------|
+|1           |January                          |
+|2           |February                         |
+|3           |March                            |
+|4           |April                            |
+|5           |May                              |
+|6           |June                             |
+|7           |July                             |
+|8           |August                           |
+|9           |September                        |
+|10          |October                          |
+|11          |November                         |
+|12          |December                         |
+{% enddocs %}
+
+{% docs dim__dow %}
+|dow         |value_description                |
+|------------|---------------------------------|
+|1           |Monday                           |
+|2           |Tuesday                          |
+|3           |Wednesday                        |
+|4           |Thursday                         |
+|5           |Friday                           |
+|6           |Saturday                         |
+|7           |Sunday                           |
+{% enddocs %}
+
+{% docs dim__period %}
+|period      |value_description                |value_details              |
+|------------|---------------------------------|---------------------------|
+|1           |Early Morning                    |hour 5, 6, 7               |
+|2           |Morning Peak                     |hour 8, 9                  |
+|3           |Midday                           |hour 10, 11, 12, 13, 14, 15|
+|4           |Afternoon Peak                   |hour 16, 17, 18            |
+|5           |Evening                          |hour 19, 20, 21            |
+|6           |Night                            |hour 22, 23                |
+|7           |Late Night                       |hour 0, 1, 2, 3, 4         |
+{% enddocs %}
+

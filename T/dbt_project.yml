@@ -31,10 +31,25 @@ clean-targets: # directories to be removed by `dbt clean`
 models:
   ny_taxi:
     +materialized: view
-
     trips:
       staging:
         +tags: staging
+        +docs:
+          node_color: blue
+      intermediate:
+        +tags: intermediate
+        +docs:
+          node_color: red
+      aggregates:
+        +materialized: table
+        +tags: aggregates
+        +docs:
+          node_color: magenta
+      dimensions:
+        +materialized: table
+        +tags: dimensions
+        +docs:
+          node_color: teal
 
 seeds:
   +tags: "seeds"

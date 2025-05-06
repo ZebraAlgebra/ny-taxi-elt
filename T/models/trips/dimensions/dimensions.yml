@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: dim__location_id
+    description: "{{ doc('dim__location_id') }}"
+  - name: dim__vendor_id
+    description: "{{ doc('dim__vendor_id') }}"
+  - name: dim__rate_code_id
+    description: "{{ doc('dim__rate_code_id') }}"
+  - name: dim__store_forward_flag
+    description: "{{ doc('dim__store_forward_flag') }}"
+  - name: dim__payment_type_id
+    description: "{{ doc('dim__payment_type_id') }}"
+  - name: dim__season
+    description: "{{ doc('dim__season') }}"
+  - name: dim__month
+    description: "{{ doc('dim__month') }}"
+  - name: dim__dow
+    description: "{{ doc('dim__dow') }}"
+  - name: dim__period
+    description: "{{ doc('dim__period') }}"

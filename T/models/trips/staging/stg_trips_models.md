@@ -42,7 +42,5 @@ with slight name normalization and datatype transformations.
 Staging model for years concatenated,
 given by `UNION ALL` the staging models from 2018 to 2025.
 
-This is created as a 
-[hypertable using the Timescale extension](https://docs.timescale.com/use-timescale/latest/hypertables/)
-in PostgreSQL.
+This is created as an incremental model.
 {% enddocs %}

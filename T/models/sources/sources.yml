@@ -10,10 +10,6 @@ sources:
     tables:
       - name: "yellow_2018_01"
         description: "yellow taxi data for year 2018 month 01"
-        columns:
-          - name: "RatecodeID"
-            description: "{{ doc('RatecodeID') }}"
-            quote: true
       - name: "yellow_2018_02"
         description: "yellow taxi data for year 2018 month 02"
       - name: "yellow_2018_03"
